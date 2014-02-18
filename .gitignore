@@ -26,6 +26,10 @@
 *.sql
 *.sqlite
 
+# SVN generated files #
+#######################
+*.svn
+
 # OS generated files #
 ######################
 .DS_Store

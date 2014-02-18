@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Weatherful</string>
+
+    <!-- Menu -->
+    <string name="menu_settings">Settings</string>
+    <string name="menu_refresh">Uppdatera</string>
+    <string name="menu_search">Sök</string>
+
+    <!-- Search -->
+    <string name="search_hint">Sök plats</string>
+
+    <!-- Weather texts -->
+    <string name="sun">Klart</string>
+    <string name="light_cloud">Halvklart</string>
+    <string name="partly_cloud">Växlande molnighet</string>
+    <string name="cloud">Molnigt</string>
+    <string name="light_rain_sun">Regnskurar</string>
+    <string name="rain_thunder_sun">Regnskurar och åska</string>
+    <string name="sleet_sun">Snöblandat regn</string>
+    <string name="snow_sun">Snö</string>
+    <string name="light_rain">Regnskurar</string>
+    <string name="rain">Regn</string>
+    <string name="rain_thunder">Regn och åska</string>
+    <string name="sleet">Snöblandat regn</string>
+    <string name="snow">Snö</string>
+    <string name="snow_thunder">Snö och åska</string>
+    <string name="fog">Dimma</string>
+    <string name="sleet_thunder">Snöblandat regn och åska</string>
+
+    <!-- App specific -->
+    <string name="main_fragment">Vädret fem dagar framåt</string>
+    <string name="detail_fragment">Detaljerad prognos</string>
+    <string name="main_weather_symbol">Dagens vädersymbol</string>
+    <string name="tomorrow_weather_symbol">Morgondagens vädersymbol</string>
+    <string name="two_from_now_weather_symbol">Övermorgons vädersymbol</string>
+    <string name="three_from_now_weather_symbol">Tre dagar från nu vädersymbol</string>
+
+    <!-- Constants -->
+    <string name="yr_url">http://api.yr.no/weatherapi/locationforecast/1.8/?lat=%1$s;lon=%2$s</string>
+    <string name="current_country">current_country</string>
+    <string name="current_city">current_city</string>
+    <string name="current_lat">current_lat</string>
+    <string name="current_lon">current_lon</string>
+    <string name="unkown_location">N/A</string>
+
+    <!-- Day strings -->
+    <string name="morning">Morgon</string>
+    <string name="afternoon">Eftermiddag</string>
+    <string name="evening">Kväll</string>
+    <string name="night">Natt</string>
+
+</resources>
