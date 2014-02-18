@@ -1,4 +1,4 @@
-weatherful-android
+Weatherful
 ==================
 
 Android project for weather forecasts.
