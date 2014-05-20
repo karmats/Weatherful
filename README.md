@@ -3,7 +3,6 @@ Weatherful
 
 Android project for weather forecasts.
 
-Import to eclipse and start coding!
 
 TODOs:
 * Sun progress indicator
