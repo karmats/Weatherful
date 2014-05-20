@@ -1,11 +1,5 @@
 package net.karmats.weatherful.fragment;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Locale;
-
-import net.karmats.weatherful.R;
-import net.karmats.weatherful.parse.ForecastParser;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
@@ -27,7 +21,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.larvalabs.svgandroid.SVG;
-import com.larvalabs.svgandroid.SVGParser;
+import com.larvalabs.svgandroid.SVGBuilder;
+
+import net.karmats.weatherful.R;
+import net.karmats.weatherful.parse.ForecastParser;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class MainWeatherFragment extends Fragment {
 
@@ -40,7 +41,9 @@ public class MainWeatherFragment extends Fragment {
     private static final Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
             mTextView.setText(msg.obj.toString());
-        };
+        }
+
+        ;
     };
 
     @Override
@@ -48,6 +51,7 @@ public class MainWeatherFragment extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_main, container, false);
         mTextView = (TextView) root.findViewById(R.id.main_weather_location);
         mMainLayout = (LinearLayout) root.findViewById(R.id.main_fragment);
+        SVGBuilder svgBuilder = new SVGBuilder();
 
         for (ForecastParser.YrWeatherSymbol sym : ForecastParser.YrWeatherSymbol.values()) {
             LinearLayout wrapper = new LinearLayout(getActivity());
@@ -58,14 +62,14 @@ public class MainWeatherFragment extends Fragment {
             TextView textView2 = new TextView(getActivity());
             textView2.setText(sym.name());
             textView2.setPadding(20, 30, 0, 0);
-            SVG svg = SVGParser.getSVGFromResource(getResources(), sym.getRawId());
-            Drawable symbol = svg.createPictureDrawable();
+            SVG svg = svgBuilder.readFromResource(getResources(), sym.getRawId()).build();
+            Drawable symbol = svg.getDrawable();
             ImageView imageView = new ImageView(getActivity());
             imageView.setImageDrawable(symbol);
             imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
-            svg = SVGParser.getSVGFromResource(getResources(), sym.getRawNightId());
-            symbol = svg.createPictureDrawable();
+            svg = svgBuilder.readFromResource(getResources(), sym.getRawNightId()).build();
+            symbol = svg.getDrawable();
             ImageView imageView2 = new ImageView(getActivity());
             imageView2.setImageDrawable(symbol);
             imageView2.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
